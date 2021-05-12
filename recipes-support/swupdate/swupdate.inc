@@ -155,6 +155,11 @@ do_install () {
     install -d ${D}${sysconfdir}/udev/rules.d
     install -m 0644 ${WORKDIR}/swupdate-usb.rules ${D}${sysconfdir}/udev/rules.d/
   fi
+
+  install -m 0755 tools/client_unstripped ${D}${bindir}/swupdate-client
+  install -m 0755 tools/progress_unstripped ${D}${bindir}/swupdate-progress
+  install -m 0755 tools/hawkbitcfg_unstripped ${D}${bindir}/swupdate-hawkbitcfg
+  install -m 0755 tools/sendtohawkbit_unstripped ${D}${bindir}/swupdate-sendtohawkbit
 }
 
 INITSCRIPT_NAME = "swupdate"
